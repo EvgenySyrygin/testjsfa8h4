@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.kg_testjsfa8h4_war_2.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.kg.testjsfa8h4.persistence.Users</class>
+    <class>com.kg.testjsfa8h4.entity.Form1Files</class>
+    <class>com.kg.testjsfa8h4.entity.EmployesList</class>
+    <class>com.kg.testjsfa8h4.entity.OwnType</class>
+    <class>com.kg.testjsfa8h4.entity.Access</class>
+    <class>com.kg.testjsfa8h4.entity.Form1</class>
+    <class>com.kg.testjsfa8h4.entity.LegalForm</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/testjsfa8h4?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+    </properties>
+  </persistence-unit>
+</persistence>

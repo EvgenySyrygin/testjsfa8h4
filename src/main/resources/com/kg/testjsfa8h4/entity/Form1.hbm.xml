@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 8, 2016 10:35:32 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.kg.testjsfa8h4.entity.Form1" table="form1" catalog="testjsfa8h4">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="idOwnType" type="int">
+            <column name="ID_OWN_TYPE" not-null="true" />
+        </property>
+        <property name="idLegalForm" type="int">
+            <column name="ID_LEGAL_FORM" not-null="true" />
+        </property>
+        <property name="orgName" type="string">
+            <column name="ORG_NAME" length="100" not-null="true" />
+        </property>
+        <property name="fioHead" type="string">
+            <column name="FIO_HEAD" length="100" not-null="true" />
+        </property>
+        <property name="fax" type="string">
+            <column name="FAX" length="25" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="25" not-null="true" />
+        </property>
+        <property name="webPage" type="string">
+            <column name="WEB_PAGE" length="100" not-null="true" />
+        </property>
+        <property name="licenseNumber" type="string">
+            <column name="LICENSE_NUMBER" length="20" not-null="true" />
+        </property>
+        <property name="licenseDate" type="date">
+            <column name="LICENSE_DATE" length="10" not-null="true" />
+        </property>
+        <property name="certificateNumber" type="string">
+            <column name="CERTIFICATE_NUMBER" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="certificateDate" type="date">
+            <column name="CERTIFICATE_DATE" length="10" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="250" not-null="true" />
+        </property>
+        <property name="idFiles" type="int">
+            <column name="ID_FILES" not-null="true" />
+        </property>
+        <property name="idEmployesList" type="int">
+            <column name="ID_EMPLOYES_LIST" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
