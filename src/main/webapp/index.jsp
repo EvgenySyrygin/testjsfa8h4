@@ -18,7 +18,8 @@
         <h1>Hello World!</h1>
         
         <button type="button" class="btn btn-primary">Primary</button>
-        <a href="#" class="btn btn-primary">Login</a>
+        <a href="dashboard.jsp" class="btn btn-primary">Login</a>
+        <a href="main.jsp" class="btn btn-primary">Login2</a>
         
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery-1.11.0.min.js"></script>

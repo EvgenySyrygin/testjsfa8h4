@@ -62,6 +62,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
   `LOGIN` VARCHAR(10) NOT NULL,                         /*логин*/
+  `PASSWORD` VARCHAR(10) NOT NULL,                      /*пароль*/
   `ID_ACCESS` VARCHAR(10) NOT NULL,                     /*уровень доступа*/
   `FIO` VARCHAR(20) NOT NULL,                           /*ФИО*/
   `PHONE_NUMBER` VARCHAR(20),                  /*телефон*/
