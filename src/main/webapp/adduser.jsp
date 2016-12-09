@@ -2,11 +2,11 @@
 <%@include file='header.jsp'%>
 
 
-
+<h1>Добавление пользователей</h1>
 <form role="form">
   <div class="form-group">
     <label for="login">Логин</label>
-    <input type="email" class="form-control" id="login" placeholder="Введите логин">
+    <input type="text" class="form-control" id="login" placeholder="Введите логин">
   </div>
   <div class="form-group">
     <label for="password">Пароль</label>
@@ -14,11 +14,11 @@
   </div>
   <div class="form-group">
     <label for="fio">ФИО</label>
-    <input type="email" class="form-control" id="fio" placeholder="Введите ФИО">
+    <input type="text" class="form-control" id="fio" placeholder="Введите ФИО">
   </div>
   <div class="form-group">
     <label for="phone">Телефон</label>
-    <input type="password" class="form-control" id="phone" placeholder="Введите телефон">
+    <input type="text" class="form-control" id="phone" placeholder="Введите телефон">
   </div>
   <div class="form-group">
     <label for="email">Email</label>
