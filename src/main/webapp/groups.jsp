@@ -1,8 +1,7 @@
+<%@page import="com.kg.testjsfa8h4.entity.Groups"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file='header.jsp'%>
-<jsp:useBean id="showGroupsBean" class="com.kg.testjsfa8h4.beans.GroupsBean" scope="request" />
-
-<h1>Группы</h1>
+<jsp:useBean id="showGroupsBean" class="com.kg.testjsfa8h4.beans.GroupsBean" scope="application" />
 
           <h2 class="sub-header">Группы</h2>
           <div class="table-responsive">
@@ -12,33 +11,27 @@
                   <th>#</th>
                   <th>Краткое название</th>
                   <th>Описание</th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
+              <% for(Groups g : showGroupsBean.returnAllGroups()) { %>
                 <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
+                    <td><%out.print(g.getId());%></td>
+                    <td><%out.print(g.getPrivelege());%></td>
+                    <td><%out.print(g.getDescription());%></td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="" data-original-title="Edit">
+                            <a href="#" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit">
+                                <span class="glyphicon glyphicon-pencil"></span></a></p></td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="" data-original-title="Delete">
+                                <a href="#" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete">
+                                <span class="glyphicon glyphicon-trash"></span></a></p></td>
                 </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                </tr>
-                
+              <% } %>
               </tbody>
             </table>
           </div>
-          
-          
-          <c:forEach items="${showGroupsBean.returnAllGroups()}" var="list">
-            <tr>
-                <td>${list.getId()}</td>
-                <td>${list.getPrivelege()}</td>
-                <td>${list.getDescription()}</td>
-            </tr>
-          </c:forEach>
-
 <a href="addgroup.jsp" class="btn btn-primary">Добавить группу</a>
 
 

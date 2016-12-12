@@ -41,12 +41,13 @@ public class addusersave extends HttpServlet {
             String fio = request.getParameter("fio");
             String phone = request.getParameter("phone");
             String email = request.getParameter("email");
+            String group = request.getParameter("group");
             
             UsersBean usersBean = new UsersBean();
             usersBean.setCreateDate(new Date());
             usersBean.setEmail(email);
             usersBean.setFio(fio);
-            usersBean.setIdAccess("1"); 
+            usersBean.setIdAccess(group); 
             usersBean.setLogin(login);
             usersBean.setPhoneNumber(phone);
             usersBean.setPassword(password);

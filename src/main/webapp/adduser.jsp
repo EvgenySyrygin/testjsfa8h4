@@ -1,6 +1,7 @@
+<%@page import="com.kg.testjsfa8h4.entity.Groups"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file='header.jsp'%>
-
+<jsp:useBean id="showGroupsBean" class="com.kg.testjsfa8h4.beans.GroupsBean" scope="application" />
 
 <jsp:useBean id="users" 
                     class="com.kg.testjsfa8h4.beans.UsersBean"> 
@@ -28,6 +29,14 @@
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control" id="email" name="email" placeholder="Введите email">
+  </div>
+  <div class="form-group">
+    <label for="email">Группа</label>
+      <select class="form-control" id="group" name="group" placeholder="Выберите группу">
+        <% for(Groups g : showGroupsBean.returnAllGroups()) { %>
+        <option value="<%out.print(g.getId());%>"><%out.print(g.getPrivelege());%></option>
+        <% } %>
+      </select>
   </div>
     
   <button type="submit" class="btn btn-default" id="submit">Сохранить</button>
