@@ -2,11 +2,11 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="testjsfa8h4"/>
-  <table-filter match-name="own_type"/>
-  <table-filter match-name="users"/>
   <table-filter match-name="form1"/>
-  <table-filter match-name="employes_list"/>
-  <table-filter match-name="legal_form"/>
-  <table-filter match-name="access"/>
+  <table-filter match-name="own_type"/>
+  <table-filter match-name="groups"/>
   <table-filter match-name="form1_files"/>
+  <table-filter match-name="users"/>
+  <table-filter match-name="legal_form"/>
+  <table-filter match-name="employes_list"/>
 </hibernate-reverse-engineering>

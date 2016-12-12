@@ -32,7 +32,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
+            <version>7.0</version>
             <scope>provided</scope>
         </dependency>
         
@@ -40,7 +40,7 @@
 	<dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.9</version>
+            <version>5.1.40</version>
 	</dependency>
         
         <!-- Hibernate core -->
@@ -49,19 +49,6 @@
             <artifactId>hibernate-core</artifactId>
             <version>4.3.11.Final</version>
 	</dependency>
-
-        <!-- Hibernate annotation -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-commons-annotations</artifactId>
-            <version>3.3.0.ga</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-annotations</artifactId>
-            <version>3.5.6-Final</version>
-        </dependency>
 
         <!-- Hibernate library dependecy start -->
 	<dependency>

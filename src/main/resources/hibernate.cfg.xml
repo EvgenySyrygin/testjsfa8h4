@@ -9,12 +9,12 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
     <property name="show_sql">true</property>
-    <mapping class="com.kg.testjsfa8h4.entity.Form1Files"/>
-    <mapping class="com.kg.testjsfa8h4.entity.LegalForm"/>
-    <mapping class="com.kg.testjsfa8h4.entity.Form1"/>
-    <mapping class="com.kg.testjsfa8h4.entity.Access"/>
-    <mapping class="com.kg.testjsfa8h4.entity.OwnType"/>
-    <mapping class="com.kg.testjsfa8h4.entity.EmployesList"/>
-    <mapping class="com.kg.testjsfa8h4.entity.Users"/>
+    <mapping resource="com/kg/testjsfa8h4/entity/Form1Files.hbm.xml"/>
+    <mapping resource="com/kg/testjsfa8h4/entity/Groups.hbm.xml"/>
+    <mapping resource="com/kg/testjsfa8h4/entity/LegalForm.hbm.xml"/>
+    <mapping resource="com/kg/testjsfa8h4/entity/Form1.hbm.xml"/>
+    <mapping resource="com/kg/testjsfa8h4/entity/OwnType.hbm.xml"/>
+    <mapping resource="com/kg/testjsfa8h4/entity/EmployesList.hbm.xml"/>
+    <mapping resource="com/kg/testjsfa8h4/entity/Users.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -68,12 +68,12 @@ CREATE TABLE `users` (
   `PHONE_NUMBER` VARCHAR(20),                  /*телефон*/
   `EMAIL` VARCHAR(20),                         /*Почта*/
   `CREATE_DATE` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, /*Дата создания*/
-  `LOGIN_DATE` TIMESTAMP,                    /*Дата подключения*/
+  `LOGIN_DATE` TIMESTAMP NULL DEFAULT '0000-00-00 00:00:00',                    /*Дата подключения*/
   PRIMARY KEY (`ID`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `access`;
-CREATE TABLE `access` (
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE `groups` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
   `PRIVELEGE` VARCHAR(10) NOT NULL,                     /*уровень доступа*/
   `DESCRIPTION` VARCHAR(10) NOT NULL,                   /*описание*/

@@ -42,8 +42,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Помощь</a></li>
-            <li><a href="#">Выход</a></li>
+            <li><a href="help.jsp">Помощь</a></li>
+            <li><a href="index.jsp">Выход</a></li>
           </ul>          
         </div>
       </div>
