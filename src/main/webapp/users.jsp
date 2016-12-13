@@ -3,8 +3,7 @@
 <%@include file='header.jsp'%>
 <jsp:useBean id="showUsersBean" class="com.kg.testjsfa8h4.beans.UsersBean" scope="application" />
 
-<h1>Пользователи системы</h1>
-          <h2 class="sub-header">Section title</h2>
+          <h2 class="sub-header">Пользователи системы</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

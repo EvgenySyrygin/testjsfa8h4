@@ -2,11 +2,7 @@
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file='header.jsp'%>
 <jsp:useBean id="showGroupsBean" class="com.kg.testjsfa8h4.beans.GroupsBean" scope="application" />
-
-<jsp:useBean id="users" 
-                    class="com.kg.testjsfa8h4.beans.UsersBean"> 
-  
-</jsp:useBean>
+<jsp:useBean id="users" class="com.kg.testjsfa8h4.beans.UsersBean" scope="application"/> 
 
 <h1>Добавление пользователей</h1>
 <form role="form" action="addusersave" method="post">

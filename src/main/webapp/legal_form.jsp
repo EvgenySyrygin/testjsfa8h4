@@ -3,8 +3,7 @@
 <%@include file='header.jsp'%>
 <jsp:useBean id="showLegalF" class="com.kg.testjsfa8h4.beans.LegalFormBean" scope="application" />
 
-<h1>Добавление Правовой формы</h1>
- <h2 class="sub-header">Правовая формы</h2>
+ <h2 class="sub-header">Правовая форма</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

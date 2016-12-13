@@ -3,10 +3,10 @@
 
 
 <h1>Добавление формы собственности</h1>
-<form role="form">
+<form role="form" action="addowntypesave" method="post" accept-charset="UTF-8">
   <div class="form-group">
     <label for="owntype">Форма собственности</label>
-    <input type="text" class="form-control" id="owntype" placeholder="Введите форму собственности">
+    <input type="text" class="form-control" id="owntype" name="owntype" placeholder="Введите форму собственности">
   </div>
       
   <button type="submit" class="btn btn-default">Сохранить</button>
