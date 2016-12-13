@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -15,11 +15,23 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Hello World!</h1>
-        
-        <button type="button" class="btn btn-primary">Primary</button>
-        <a href="dashboard.jsp" class="btn btn-primary">Login</a>
-        <a href="main.jsp" class="btn btn-primary">Login2</a>
+        <center>
+            <div align="center" style="width: 600px;">
+              <h1>Авторизация</h1>
+              <form role="form" action="login" method="post" accept-charset="UTF-8" >
+                <div class="form-group">
+                  <label for="login">Логин</label>
+                  <input type="text" class="form-control" id="login" name="login" placeholder="Введите имя групппы">
+                </div>
+                <div class="form-group">
+                  <label for="password">Пароль</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Введите описание группы">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+            </div>
+        </center>
         
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery-1.11.0.min.js"></script>

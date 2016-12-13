@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.kg.testjsfa8h4.servlet;
+package com.kg.testjsfa8h4.servlet.group;
 
 import com.kg.testjsfa8h4.beans.GroupsBean;
 import java.io.IOException;
@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
  *
@@ -33,9 +34,9 @@ public class addgroupsave extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8"); 
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here. You may use following sample code. */
             String group = request.getParameter("group");
             String description = request.getParameter("description");
             GroupsBean groupsBean = new GroupsBean();

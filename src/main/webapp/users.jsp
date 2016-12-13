@@ -1,5 +1,5 @@
 <%@page import="com.kg.testjsfa8h4.entity.Users"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file='header.jsp'%>
 <jsp:useBean id="showUsersBean" class="com.kg.testjsfa8h4.beans.UsersBean" scope="application" />
 
@@ -22,6 +22,12 @@
                     <td><%out.print(u.getLogin());%></td>
                     <td><%out.print(u.getFio());%></td>
                     <td><%out.print(u.getIdAccess());%></td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="" data-original-title="Edit">
+                            <a href="edituser.jsp?id=<%out.print(u.getId());%>" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal">
+                                <span class="glyphicon glyphicon-pencil"></span></a></p></td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="" data-original-title="Delete">
+                                <a href="deleteusersave?id=<%out.print(u.getId());%>" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal">
+                                <span class="glyphicon glyphicon-trash"></span></a></p></td>
                 </tr>
                 <% } %>
               </tbody>

@@ -1,5 +1,5 @@
 <%@page import="com.kg.testjsfa8h4.entity.Groups"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file='header.jsp'%>
 <jsp:useBean id="showGroupsBean" class="com.kg.testjsfa8h4.beans.GroupsBean" scope="application" />
 

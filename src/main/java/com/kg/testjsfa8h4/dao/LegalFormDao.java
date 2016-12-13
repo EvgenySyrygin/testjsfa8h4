@@ -1,6 +1,6 @@
 package com.kg.testjsfa8h4.dao;
 
-import com.kg.testjsfa8h4.entity.Users;
+import com.kg.testjsfa8h4.entity.LegalForm;
 import com.kg.testjsfa8h4.persistence.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +12,13 @@ import org.hibernate.Transaction;
  *
  * @author DEX
  */
-public class UsersDao {
-    public void addUser(Users user) {
+public class LegalFormDao {
+    public void addLegalForm(LegalForm legalForm) {
         Transaction tx = null;
         Session session = new HibernateUtil().getSessionFactory().openSession();
         try {
             tx = session.beginTransaction();
-            session.save(user);
+            session.save(legalForm);
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -30,13 +30,13 @@ public class UsersDao {
             session.close();
         }
     }
-    public void deleteUser(int idUser) {
+    public void deleteLegalForm(int idLegalForm) {
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            Users user = (Users) session.load(Users.class, new Integer(idUser));
-            session.delete(user);
+            LegalForm legalForm = (LegalForm) session.load(LegalForm.class, new Integer(idLegalForm));
+            session.delete(legalForm);
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -45,21 +45,14 @@ public class UsersDao {
             session.close();
         }
     }
-    public void updateUser (int idUser, Users user) {
+    public void updateLegalForm (int idLegalForm, LegalForm legalForm) {
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            Users oldUser = (Users) session.load(Users.class, new Integer(idUser));
-            oldUser.setLogin(user.getLogin());
-            oldUser.setPassword(user.getPassword());
-            oldUser.setIdAccess(user.getIdAccess());
-            oldUser.setFio(user.getFio());
-            oldUser.setPhoneNumber(user.getPhoneNumber());
-            oldUser.setEmail(user.getEmail());
-            oldUser.setCreateDate(user.getCreateDate());
-            oldUser.setLoginDate(user.getLoginDate());
-            session.update(oldUser);
+            LegalForm oldLegalForm = (LegalForm) session.load(LegalForm.class, new Integer(idLegalForm));
+            oldLegalForm.setLegalForm(legalForm.getLegalForm());
+            session.update(oldLegalForm);
             trns.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -71,40 +64,39 @@ public class UsersDao {
             session.close();
         }
     }
-    public Users getUserById (int idUser) {
-        Users user = null;
+    public LegalForm getLegalFormById (int idLegalForm) {
+        LegalForm legaForm = null;
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            String queryString = "from Users where id = :idToFind";
+            String queryString = "from LegalForm where id = :idToFind";
             Query query = session.createQuery(queryString);
-            query.setInteger("idToFind", idUser);
-            user = (Users) query.uniqueResult();
+            query.setInteger("idToFind", idLegalForm);
+            legaForm = (LegalForm) query.uniqueResult();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             session.flush();
             session.close();
         }
-        return user;
+        return legaForm;
     }
-    
-    public List<Users> getAllUsers() {
-        List<Users> listGroups = new ArrayList<Users>();
+    public List<LegalForm> getAllLegalForms() {
+        List<LegalForm> listLegalForms = new ArrayList<LegalForm>();
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         
         try {
             trns = session.beginTransaction();
-            listGroups = session.createCriteria(Users.class).list();
+            listLegalForms = session.createCriteria(LegalForm.class).list();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             session.flush();
             session.close();
         }
-        return listGroups;
+        return listLegalForms;
     }
     
 }

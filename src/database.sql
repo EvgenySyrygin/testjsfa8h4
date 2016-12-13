@@ -22,14 +22,14 @@ CREATE TABLE `form1` (
 DROP TABLE IF EXISTS `own_type`;
 CREATE TABLE `own_type` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
-  `OWN_TYPE` VARCHAR(100) NOT NULL,                      /*Форма собственности*/
+  `OWN_TYPE` VARCHAR(200) NOT NULL,                      /*Форма собственности*/
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `legal_form`;
 CREATE TABLE `legal_form` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
-  `LEGAL_FORM` VARCHAR(100) NOT NULL,                 /*Правовая форма*/
+  `LEGAL_FORM` VARCHAR(200) NOT NULL,                 /*Правовая форма*/
   PRIMARY KEY (`ID`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -37,9 +37,9 @@ DROP TABLE IF EXISTS `form1_files`;
 CREATE TABLE `form1_files` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
   `ID_FORM1` INT(10) NOT NULL,                          /*ид формы*/
-  `FILE_NAME` VARCHAR(20) NOT NULL,                     /*имя файла*/
-  `FILE_DATE` VARCHAR(20) NOT NULL,                     /*дата загрузки*/
-  `FILE_DATA` VARCHAR(20) NOT NULL,                     /*данные*/
+  `FILE_NAME` VARCHAR(50) NOT NULL,                     /*имя файла*/
+  `FILE_DATE` VARCHAR(50) NOT NULL,                     /*дата загрузки*/
+  `FILE_DATA` VARCHAR(50) NOT NULL,                     /*данные*/
   PRIMARY KEY (`ID`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -47,26 +47,26 @@ DROP TABLE IF EXISTS `employes_list`;
 CREATE TABLE `employes_list` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
   `ID_FORM1` VARCHAR(10) NOT NULL,                      /*ид формы*/
-  `FIO` VARCHAR(20) NOT NULL,                           /*ФИО*/
-  `PHONE_HOME` VARCHAR(20) NOT NULL,                    /*Домашний телефон*/
-  `PHONE_MOBILE` VARCHAR(20) NOT NULL,                  /*Мобильный телефон*/
-  `PHONE_WORK` VARCHAR(20) NOT NULL,                    /*Рабочий телефон*/
-  `HOME_ADDRESS` VARCHAR(20) NOT NULL,                  /*Домашний адрес*/
-  `MAIL` VARCHAR(20) NOT NULL,                          /*Почта*/
-  `BANK_DETAILS` VARCHAR(20) NOT NULL,                  /*Банковские реквизиты*/
-  `POSITION` VARCHAR(20) NOT NULL,                      /*Должность*/
+  `FIO` VARCHAR(200) NOT NULL,                           /*ФИО*/
+  `PHONE_HOME` VARCHAR(50) NOT NULL,                    /*Домашний телефон*/
+  `PHONE_MOBILE` VARCHAR(50) NOT NULL,                  /*Мобильный телефон*/
+  `PHONE_WORK` VARCHAR(50) NOT NULL,                    /*Рабочий телефон*/
+  `HOME_ADDRESS` VARCHAR(200) NOT NULL,                  /*Домашний адрес*/
+  `MAIL` VARCHAR(50) NOT NULL,                          /*Почта*/
+  `BANK_DETAILS` VARCHAR(200) NOT NULL,                  /*Банковские реквизиты*/
+  `POSITION` VARCHAR(200) NOT NULL,                      /*Должность*/
   PRIMARY KEY (`ID`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
-  `LOGIN` VARCHAR(10) NOT NULL,                         /*логин*/
-  `PASSWORD` VARCHAR(10) NOT NULL,                      /*пароль*/
+  `LOGIN` VARCHAR(50) NOT NULL,                         /*логин*/
+  `PASSWORD` VARCHAR(50) NOT NULL,                      /*пароль*/
   `ID_ACCESS` VARCHAR(10) NOT NULL,                     /*уровень доступа*/
-  `FIO` VARCHAR(20) NOT NULL,                           /*ФИО*/
-  `PHONE_NUMBER` VARCHAR(20),                  /*телефон*/
-  `EMAIL` VARCHAR(20),                         /*Почта*/
+  `FIO` VARCHAR(200) NOT NULL,                           /*ФИО*/
+  `PHONE_NUMBER` VARCHAR(50),                  /*телефон*/
+  `EMAIL` VARCHAR(50),                         /*Почта*/
   `CREATE_DATE` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, /*Дата создания*/
   `LOGIN_DATE` TIMESTAMP NULL DEFAULT '0000-00-00 00:00:00',                    /*Дата подключения*/
   PRIMARY KEY (`ID`) 
@@ -75,8 +75,8 @@ CREATE TABLE `users` (
 DROP TABLE IF EXISTS `groups`;
 CREATE TABLE `groups` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
-  `PRIVELEGE` VARCHAR(10) NOT NULL,                     /*уровень доступа*/
-  `DESCRIPTION` VARCHAR(10) NOT NULL,                   /*описание*/
+  `PRIVELEGE` VARCHAR(100) NOT NULL,                     /*уровень доступа*/
+  `DESCRIPTION` VARCHAR(200) NOT NULL,                   /*описание*/
   PRIMARY KEY (`ID`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

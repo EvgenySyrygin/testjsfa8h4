@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.kg.testjsfa8h4.servlet;
+package com.kg.testjsfa8h4.servlet.legalform;
 
-import com.kg.testjsfa8h4.beans.UsersBean;
+import com.kg.testjsfa8h4.beans.LegalFormBean;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author esyrygin
  */
-@WebServlet(name = "addusersave", urlPatterns = {"/addusersave"})
-public class addusersave extends HttpServlet {
+@WebServlet(name = "addlegalformsave", urlPatterns = {"/addlegalformsave"})
+public class deletelegalformsave extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,28 +28,14 @@ public class addusersave extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String login = request.getParameter("login");
-            String password = request.getParameter("password");
-            String fio = request.getParameter("fio");
-            String phone = request.getParameter("phone");
-            String email = request.getParameter("email");
-            String group = request.getParameter("group");
-            
-            UsersBean usersBean = new UsersBean();
-            usersBean.setCreateDate(new Date());
-            usersBean.setEmail(email);
-            usersBean.setFio(fio);
-            usersBean.setIdAccess(group); 
-            usersBean.setLogin(login);
-            usersBean.setPhoneNumber(phone);
-            usersBean.setPassword(password);
-            
-            usersBean.addUser();
-            /* TODO output your page here. You may use following sample code. */
-            
-            response.sendRedirect("users.jsp");
+            Integer id = Integer.valueOf(request.getParameter("id"));
+            LegalFormBean legalFormBean = new LegalFormBean();
+            legalFormBean.setId(id);
+            legalFormBean.deleteLegalForm();
+            response.sendRedirect("legal_form.jsp");
         } finally {
             out.close();
         }

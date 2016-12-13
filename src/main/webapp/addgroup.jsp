@@ -1,9 +1,9 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file='header.jsp'%>
 
 
 <h1>Добавление Группы</h1>
-<form role="form" action="addgroupsave" method="post">
+<form role="form" action="addgroupsave" method="post" accept-charset="UTF-8">
   <div class="form-group">
     <label for="group">Группа</label>
     <input type="text" class="form-control" id="group" name="group" placeholder="Введите имя групппы">
