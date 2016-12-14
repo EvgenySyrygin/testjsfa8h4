@@ -4,16 +4,16 @@
 
 <h1>Добавление Группы</h1>
 <form role="form" action="addgroupsave" method="post" accept-charset="UTF-8">
-  <div class="form-group">
-    <label for="group">Группа</label>
-    <input type="text" class="form-control" id="group" name="group" placeholder="Введите имя групппы">
-  </div>
-  <div class="form-group">
-    <label for="description">Описание группы</label>
-    <input type="text" class="form-control" id="description" name="description" placeholder="Введите описание группы">
-  </div>
-    
-  <button type="submit" class="btn btn-default">Сохранить</button>
+    <div class="form-group">
+        <label for="group">Группа</label>
+        <input type="text" class="form-control" id="group" name="group" placeholder="Введите имя групппы">
+    </div>
+    <div class="form-group">
+        <label for="description">Описание группы</label>
+        <input type="text" class="form-control" id="description" name="description" placeholder="Введите описание группы">
+    </div>
+
+    <button type="submit" class="btn btn-default">Сохранить</button>
 </form>
 
 

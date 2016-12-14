@@ -1,13 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.kg.testjsfa8h4.servlet.form1;
 
 import com.kg.testjsfa8h4.beans.Form1Bean;
-import com.kg.testjsfa8h4.servlet.user.*;
-import com.kg.testjsfa8h4.beans.UsersBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;

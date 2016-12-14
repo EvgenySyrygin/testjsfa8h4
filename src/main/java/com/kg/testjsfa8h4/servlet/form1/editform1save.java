@@ -1,8 +1,6 @@
 package com.kg.testjsfa8h4.servlet.form1;
 
 import com.kg.testjsfa8h4.beans.Form1Bean;
-import com.kg.testjsfa8h4.servlet.user.*;
-import com.kg.testjsfa8h4.beans.UsersBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;

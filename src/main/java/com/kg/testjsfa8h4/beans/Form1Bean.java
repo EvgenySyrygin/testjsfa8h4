@@ -1,9 +1,7 @@
 package com.kg.testjsfa8h4.beans;
 
 import com.kg.testjsfa8h4.dao.Form1Dao;
-import com.kg.testjsfa8h4.dao.UsersDao;
 import com.kg.testjsfa8h4.entity.Form1;
-import com.kg.testjsfa8h4.entity.Users;
 import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;

@@ -16,19 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "editlegalformsave", urlPatterns = {"/editlegalformsave"})
 public class editlegalformsave extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8"); 
         PrintWriter out = response.getWriter();
         try {
             Integer id = Integer.valueOf(request.getParameter("id"));

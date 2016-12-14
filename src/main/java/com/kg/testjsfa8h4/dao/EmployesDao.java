@@ -1,7 +1,6 @@
 package com.kg.testjsfa8h4.dao;
 
 import com.kg.testjsfa8h4.entity.EmployesList;
-import com.kg.testjsfa8h4.entity.Users;
 import com.kg.testjsfa8h4.persistence.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.kg.testjsfa8h4.servlet.group;
+package com.kg.testjsfa8h4.servlet.employe;
 
-import com.kg.testjsfa8h4.beans.GroupsBean;
+import com.kg.testjsfa8h4.beans.EmployesBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -15,29 +10,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * delete employee servlet do action from db and redirect to main employee page
  * @author esyrygin
  */
-@WebServlet(name = "editgroupsave", urlPatterns = {"/editgroupsave"})
-public class editgroupsave extends HttpServlet {
+@WebServlet(name = "deleteemployesave", urlPatterns = {"/deleteemployesave"})
+public class deleteemployesave extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8"); 
         PrintWriter out = response.getWriter();
+        request.setCharacterEncoding("UTF-8");
         try {
             Integer id = Integer.valueOf(request.getParameter("id"));
-            String group = request.getParameter("group");
-            String description = request.getParameter("description");
-            GroupsBean groupsBean = new GroupsBean();
-            groupsBean.setId(id);
-            groupsBean.setDescription(description);
-            groupsBean.setPrivelege(group);
-            
-            groupsBean.updateGroup();
-            
-            response.sendRedirect("groups.jsp");
+            EmployesBean employesBean = new EmployesBean();
+            employesBean.setId(id);
+            employesBean.deleteEmploye();
+            response.sendRedirect("employees.jsp");
         } finally {
             out.close();
         }

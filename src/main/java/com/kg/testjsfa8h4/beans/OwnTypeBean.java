@@ -1,8 +1,6 @@
 package com.kg.testjsfa8h4.beans;
 
-import com.kg.testjsfa8h4.dao.GroupsDao;
 import com.kg.testjsfa8h4.dao.OwnTypeDao;
-import com.kg.testjsfa8h4.entity.Groups;
 import com.kg.testjsfa8h4.entity.OwnType;
 import java.util.List;
 import javax.faces.bean.ManagedBean;

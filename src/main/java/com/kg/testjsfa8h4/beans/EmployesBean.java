@@ -2,7 +2,6 @@ package com.kg.testjsfa8h4.beans;
 
 import com.kg.testjsfa8h4.dao.EmployesDao;
 import com.kg.testjsfa8h4.entity.EmployesList;
-import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;

@@ -15,8 +15,7 @@ CREATE TABLE `form1` (
   `ADDRESS` VARCHAR(250) NOT NULL,                      /*Адрес*/
   `ID_FILES` INT(10) NOT NULL,                          /*Файлы для прикрепления(при необходимости)*/
   `ID_EMPLOYES_LIST` INT(10) NOT NULL,                  /*Список сотрудников*/
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `UNI_CERTIFICATE_NUMBER` (`CERTIFICATE_NUMBER`)
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `own_type`;

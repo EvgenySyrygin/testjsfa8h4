@@ -1,7 +1,5 @@
 package com.kg.testjsfa8h4.servlet.user;
 
-import com.kg.testjsfa8h4.servlet.group.*;
-import com.kg.testjsfa8h4.beans.GroupsBean;
 import com.kg.testjsfa8h4.beans.UsersBean;
 import java.io.IOException;
 import java.io.PrintWriter;

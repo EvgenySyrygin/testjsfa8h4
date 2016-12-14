@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.kg.testjsfa8h4.servlet.group;
+package com.kg.testjsfa8h4.servlet.employe;
 
-import com.kg.testjsfa8h4.beans.GroupsBean;
+import com.kg.testjsfa8h4.beans.EmployesBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author esyrygin
  */
-@WebServlet(name = "editgroupsave", urlPatterns = {"/editgroupsave"})
-public class editgroupsave extends HttpServlet {
+@WebServlet(name = "addemployesave", urlPatterns = {"/addemployesave"})
+public class addemployesave extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -27,17 +22,30 @@ public class editgroupsave extends HttpServlet {
         request.setCharacterEncoding("UTF-8"); 
         PrintWriter out = response.getWriter();
         try {
-            Integer id = Integer.valueOf(request.getParameter("id"));
-            String group = request.getParameter("group");
-            String description = request.getParameter("description");
-            GroupsBean groupsBean = new GroupsBean();
-            groupsBean.setId(id);
-            groupsBean.setDescription(description);
-            groupsBean.setPrivelege(group);
+            String fid = request.getParameter("fid");
+            String fio = request.getParameter("fio");
+            String hphone = request.getParameter("hphone");
+            String mphone = request.getParameter("mphone");
+            String wphone = request.getParameter("wphone");
+            String haddress = request.getParameter("haddress");
+            String email = request.getParameter("email");
+            String bankr = request.getParameter("bankr");
+            String position = request.getParameter("position");
             
-            groupsBean.updateGroup();
+            EmployesBean employesBean = new EmployesBean();
+            employesBean.setBankDetails(bankr);
+            employesBean.setFio(fio);
+            employesBean.setHomeAddress(haddress);
+            employesBean.setIdForm1(fid);
+            employesBean.setMail(email);
+            employesBean.setPhoneHome(hphone);
+            employesBean.setPhoneMobile(mphone);
+            employesBean.setPhoneWork(wphone);
+            employesBean.setPosition(position);
             
-            response.sendRedirect("groups.jsp");
+            employesBean.addEmploye();
+            
+            response.sendRedirect("employees.jsp");
         } finally {
             out.close();
         }
