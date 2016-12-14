@@ -3,6 +3,7 @@ package com.kg.testjsfa8h4.dao;
 import com.kg.testjsfa8h4.entity.Users;
 import com.kg.testjsfa8h4.persistence.HibernateUtil;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
@@ -94,19 +95,32 @@ public class UsersDao {
     
     public List<Users> getAllUsers() {
         List<Users> listGroups = new ArrayList<Users>();
+        List<Users> listGroupsRet = new ArrayList<Users>();
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         
         try {
+            
             trns = session.beginTransaction();
             listGroups = session.createCriteria(Users.class).list();
+            
+//            Iterator i = listGroups.iterator();
+//            Users t = (Users) i.next();
+//            Hibernate.initialize(t.getGroups());
+            
+            Iterator u = listGroups.iterator();
+            while(u.hasNext()) {
+                Users t = (Users) u.next();
+                Hibernate.initialize(t.getGroups());
+                listGroupsRet.add(t);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             session.flush();
             session.close();
         }
-        return listGroups;
+        return listGroupsRet;
     }
     
 }

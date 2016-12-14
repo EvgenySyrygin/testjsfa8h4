@@ -32,10 +32,10 @@
         <label for="email">Группа</label>
         <select class="form-control" id="group" name="group" placeholder="Выберите группу">
             <% for (Groups g : showGroupsBean.returnAllGroups()) { %>
-            <% if (g.getId().equals(user.getId())) { %>
-            <option selected="selected" value="<%out.print(g.getId());%>"><%out.print(g.getPrivelege());%></option>
+            <% if (g.getIdAccess().equals(user.getId())) { %>
+            <option selected="selected" value="<%out.print(g.getIdAccess());%>"><%out.print(g.getPrivelege());%></option>
             <% } else { %>
-            <option value="<%out.print(g.getId());%>"><%out.print(g.getPrivelege());%></option>
+            <option value="<%out.print(g.getIdAccess());%>"><%out.print(g.getPrivelege());%></option>
             <% }
             } %>
         </select>
