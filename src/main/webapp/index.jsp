@@ -21,11 +21,11 @@
                 <form role="form" action="login" method="post" accept-charset="UTF-8" >
                     <div class="form-group">
                         <label for="login">Логин</label>
-                        <input type="text" class="form-control" id="login" name="login" placeholder="Введите имя групппы">
+                        <input type="text" class="form-control" id="login" name="login" placeholder="Логин">
                     </div>
                     <div class="form-group">
                         <label for="password">Пароль</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Введите описание группы">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Пароль">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Login</button>

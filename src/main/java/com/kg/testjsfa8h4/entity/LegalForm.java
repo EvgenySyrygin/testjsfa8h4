@@ -1,5 +1,5 @@
 package com.kg.testjsfa8h4.entity;
-// Generated Dec 12, 2016 1:39:17 PM by Hibernate Tools 4.3.1
+// Generated Dec 14, 2016 1:26:34 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -42,7 +42,7 @@ public class LegalForm  implements java.io.Serializable {
     }
 
     
-    @Column(name="LEGAL_FORM", nullable=false, length=100)
+    @Column(name="LEGAL_FORM", nullable=false, length=200)
     public String getLegalForm() {
         return this.legalForm;
     }

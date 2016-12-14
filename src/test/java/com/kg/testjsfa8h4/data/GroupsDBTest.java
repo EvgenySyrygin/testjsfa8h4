@@ -61,7 +61,7 @@ public class GroupsDBTest {
         session = new HibernateUtil().getSessionFactory().openSession();
         try {
             tx = session.beginTransaction();
-            Groups groupDelete = (Groups) session.load(Groups.class, new Integer(group.getId()));
+            Groups groupDelete = (Groups) session.load(Groups.class, new Integer(group.getIdAccess()));
             session.delete(groupDelete);
             session.getTransaction().commit();
         } catch (Exception e) {

@@ -4,6 +4,7 @@ import com.kg.testjsfa8h4.entity.Users;
 import com.kg.testjsfa8h4.persistence.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -53,7 +54,7 @@ public class UsersDao {
             Users oldUser = (Users) session.load(Users.class, new Integer(idUser));
             oldUser.setLogin(user.getLogin());
             oldUser.setPassword(user.getPassword());
-            oldUser.setIdAccess(user.getIdAccess());
+            oldUser.setGroups(user.getGroups());
             oldUser.setFio(user.getFio());
             oldUser.setPhoneNumber(user.getPhoneNumber());
             oldUser.setEmail(user.getEmail());
@@ -81,6 +82,7 @@ public class UsersDao {
             Query query = session.createQuery(queryString);
             query.setInteger("idToFind", idUser);
             user = (Users) query.uniqueResult();
+            Hibernate.initialize(user.getGroups());
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

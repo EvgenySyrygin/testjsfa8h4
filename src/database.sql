@@ -62,18 +62,20 @@ CREATE TABLE `users` (
   `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
   `LOGIN` VARCHAR(50) NOT NULL,                         /*логин*/
   `PASSWORD` VARCHAR(50) NOT NULL,                      /*пароль*/
-  `ID_ACCESS` VARCHAR(10) NOT NULL,                     /*уровень доступа*/
+  `ID_ACCESS` INT(10) UNSIGNED NOT NULL,                     /*уровень доступа*/
   `FIO` VARCHAR(200) NOT NULL,                           /*ФИО*/
   `PHONE_NUMBER` VARCHAR(50),                  /*телефон*/
   `EMAIL` VARCHAR(50),                         /*Почта*/
   `CREATE_DATE` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, /*Дата создания*/
   `LOGIN_DATE` TIMESTAMP NULL DEFAULT '0000-00-00 00:00:00',                    /*Дата подключения*/
-  PRIMARY KEY (`ID`) 
+  PRIMARY KEY (`ID`) ,
+	INDEX `FK_users_groups` (`ID_ACCESS`),
+	CONSTRAINT `FK_users_groups` FOREIGN KEY (`ID_ACCESS`) REFERENCES `groups` (`ID_ACCESS`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `groups`;
 CREATE TABLE `groups` (
-  `ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
+  `ID_ACCESS` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT, 
   `PRIVELEGE` VARCHAR(100) NOT NULL,                     /*уровень доступа*/
   `DESCRIPTION` VARCHAR(200) NOT NULL,                   /*описание*/
   PRIMARY KEY (`ID`) 

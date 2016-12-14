@@ -20,7 +20,7 @@
                 <td><%out.print(u.getId());%></td>
                 <td><%out.print(u.getLogin());%></td>
                 <td><%out.print(u.getFio());%></td>
-                <td><%out.print(u.getIdAccess());%></td>
+                <td><%out.print(u.getGroups().getIdAccess());%> - <%out.print(u.getGroups().getPrivelege());%></td>
                 <td><p data-placement="top" data-toggle="tooltip" title="" data-original-title="Edit">
                         <a href="edituser.jsp?id=<%out.print(u.getId());%>" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal">
                             <span class="glyphicon glyphicon-pencil"></span></a></p></td>

@@ -37,6 +37,17 @@ public class GroupsBean {
         }
     }
     
+    public Groups returnGroupById(int id) {
+        GroupsDao grupsDao = new GroupsDao();
+        Groups group = grupsDao.getGroupById(id);
+        if(group != null) {
+            setDescription(group.getDescription());
+            setPrivelege(group.getPrivelege());
+        } else {
+        }
+        return group;
+    }
+    
     public void deleteGroup() {
         GroupsDao groupsDao = new GroupsDao();
         groupsDao.deleteGroup(getId());

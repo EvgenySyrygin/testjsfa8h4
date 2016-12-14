@@ -1,13 +1,16 @@
 package com.kg.testjsfa8h4.persistence;
 
-import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.SessionFactory;
 
 /**
+ * Hibernate Utility class with a convenient method to get Session Factory
+ * object.
  *
  * @author esyrygin
  */
 public class HibernateUtil {
+
     private static final SessionFactory sessionFactory;
     
     static {

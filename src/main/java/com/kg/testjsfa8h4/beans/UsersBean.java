@@ -1,6 +1,7 @@
 package com.kg.testjsfa8h4.beans;
 
 import com.kg.testjsfa8h4.dao.UsersDao;
+import com.kg.testjsfa8h4.entity.Groups;
 import com.kg.testjsfa8h4.entity.Users;
 import java.util.Date;
 import java.util.List;
@@ -15,21 +16,21 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class UsersBean {
 
-    private Integer id;
-    private String login;
-    private String password;
-    private String idAccess;
-    private String fio;
-    private String phoneNumber;
-    private String email;
-    private Date createDate;
-    private Date loginDate;
+     private Integer id;
+     private Groups groups;
+     private String login;
+     private String password;
+     private String fio;
+     private String phoneNumber;
+     private String email;
+     private Date createDate;
+     private Date loginDate;
     
     public UsersBean() {
     }
     
     public void addUser() {
-        Users user = new Users(login, password, idAccess, fio, phoneNumber, email, new Date(), null);
+        Users user = new Users(groups, login, password, fio, phoneNumber, email, createDate, loginDate);
         UsersDao usersDao = new UsersDao();
         usersDao.addUser(user);
     }
@@ -40,7 +41,7 @@ public class UsersBean {
         if(user != null) {
             setLogin(user.getLogin());
             setPassword(user.getPassword());
-            setIdAccess(user.getIdAccess());
+            setGroups(user.getGroups());
             setFio(user.getFio());
             setPhoneNumber(user.getPhoneNumber());
             setEmail(user.getEmail());
@@ -55,7 +56,7 @@ public class UsersBean {
         userDao.deleteUser(getId());
         setLogin("");
         setPassword("");
-        setIdAccess("");
+        setGroups(null);
         setFio("");
         setPhoneNumber("");
         setEmail("");
@@ -64,7 +65,7 @@ public class UsersBean {
     }
     
     public void updateUser() {
-        Users user = new Users(getLogin(), getPassword(), getIdAccess(), getFio(), getPhoneNumber(), getEmail(), getCreateDate(), getLoginDate());
+        Users user = new Users(groups, login, password, fio, phoneNumber, email, createDate, loginDate);
         UsersDao userDao = new UsersDao();
         userDao.updateUser(getId(), user);
     }
@@ -100,12 +101,12 @@ public class UsersBean {
         this.password = password;
     }
 
-    public String getIdAccess() {
-        return idAccess;
+    public Groups getGroups() {
+        return groups;
     }
 
-    public void setIdAccess(String idAccess) {
-        this.idAccess = idAccess;
+    public void setGroups(Groups groups) {
+        this.groups = groups;
     }
 
     public String getFio() {

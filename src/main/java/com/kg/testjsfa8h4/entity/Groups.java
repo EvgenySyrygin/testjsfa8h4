@@ -1,12 +1,16 @@
 package com.kg.testjsfa8h4.entity;
-// Generated Dec 12, 2016 1:39:17 PM by Hibernate Tools 4.3.1
+// Generated Dec 14, 2016 1:26:34 PM by Hibernate Tools 4.3.1
 
 
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -19,32 +23,39 @@ import javax.persistence.Table;
 public class Groups  implements java.io.Serializable {
 
 
-     private Integer id;
+     private Integer idAccess;
      private String privelege;
      private String description;
+     private Set userses = new HashSet(0);
 
     public Groups() {
     }
 
+	
     public Groups(String privelege, String description) {
+        this.privelege = privelege;
+        this.description = description;
+    }
+    public Groups(String privelege, String description, Set userses) {
        this.privelege = privelege;
        this.description = description;
+       this.userses = userses;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)
 
     
-    @Column(name="ID", unique=true, nullable=false)
-    public Integer getId() {
-        return this.id;
+    @Column(name="ID_ACCESS", unique=true, nullable=false)
+    public Integer getIdAccess() {
+        return this.idAccess;
     }
     
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdAccess(Integer idAccess) {
+        this.idAccess = idAccess;
     }
 
     
-    @Column(name="PRIVELEGE", nullable=false, length=10)
+    @Column(name="PRIVELEGE", nullable=false, length=100)
     public String getPrivelege() {
         return this.privelege;
     }
@@ -54,13 +65,22 @@ public class Groups  implements java.io.Serializable {
     }
 
     
-    @Column(name="DESCRIPTION", nullable=false, length=10)
+    @Column(name="DESCRIPTION", nullable=false, length=200)
     public String getDescription() {
         return this.description;
     }
     
     public void setDescription(String description) {
         this.description = description;
+    }
+
+@OneToMany(fetch=FetchType.LAZY, mappedBy="groups")
+    public Set getUserses() {
+        return this.userses;
+    }
+    
+    public void setUserses(Set userses) {
+        this.userses = userses;
     }
 
 

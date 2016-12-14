@@ -1,5 +1,5 @@
 package com.kg.testjsfa8h4.entity;
-// Generated Dec 12, 2016 1:39:17 PM by Hibernate Tools 4.3.1
+// Generated Dec 14, 2016 1:26:34 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -68,7 +68,7 @@ public class EmployesList  implements java.io.Serializable {
     }
 
     
-    @Column(name="FIO", nullable=false, length=20)
+    @Column(name="FIO", nullable=false, length=200)
     public String getFio() {
         return this.fio;
     }
@@ -78,7 +78,7 @@ public class EmployesList  implements java.io.Serializable {
     }
 
     
-    @Column(name="PHONE_HOME", nullable=false, length=20)
+    @Column(name="PHONE_HOME", nullable=false, length=50)
     public String getPhoneHome() {
         return this.phoneHome;
     }
@@ -88,7 +88,7 @@ public class EmployesList  implements java.io.Serializable {
     }
 
     
-    @Column(name="PHONE_MOBILE", nullable=false, length=20)
+    @Column(name="PHONE_MOBILE", nullable=false, length=50)
     public String getPhoneMobile() {
         return this.phoneMobile;
     }
@@ -98,7 +98,7 @@ public class EmployesList  implements java.io.Serializable {
     }
 
     
-    @Column(name="PHONE_WORK", nullable=false, length=20)
+    @Column(name="PHONE_WORK", nullable=false, length=50)
     public String getPhoneWork() {
         return this.phoneWork;
     }
@@ -108,7 +108,7 @@ public class EmployesList  implements java.io.Serializable {
     }
 
     
-    @Column(name="HOME_ADDRESS", nullable=false, length=20)
+    @Column(name="HOME_ADDRESS", nullable=false, length=200)
     public String getHomeAddress() {
         return this.homeAddress;
     }
@@ -118,7 +118,7 @@ public class EmployesList  implements java.io.Serializable {
     }
 
     
-    @Column(name="MAIL", nullable=false, length=20)
+    @Column(name="MAIL", nullable=false, length=50)
     public String getMail() {
         return this.mail;
     }
@@ -128,7 +128,7 @@ public class EmployesList  implements java.io.Serializable {
     }
 
     
-    @Column(name="BANK_DETAILS", nullable=false, length=20)
+    @Column(name="BANK_DETAILS", nullable=false, length=200)
     public String getBankDetails() {
         return this.bankDetails;
     }
@@ -138,7 +138,7 @@ public class EmployesList  implements java.io.Serializable {
     }
 
     
-    @Column(name="POSITION", nullable=false, length=20)
+    @Column(name="POSITION", nullable=false, length=200)
     public String getPosition() {
         return this.position;
     }

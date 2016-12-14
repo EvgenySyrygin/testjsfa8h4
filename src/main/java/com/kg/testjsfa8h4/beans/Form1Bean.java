@@ -89,218 +89,128 @@ public class Form1Bean {
     }
     
     public List<Form1> returnAllForm1() {
-        Form1Dao usersDao = new Form1Dao();
-        return usersDao.getAllForm1();
+        Form1Dao formDao = new Form1Dao();
+        return formDao.getAllForm1();
     }
     
     //<editor-fold defaultstate="collapsed" desc="get/set">
 
-    /**
-     * @return the id
-     */
     public Integer getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(Integer id) {
         this.id = id;
     }
 
-    /**
-     * @return the idOwnType
-     */
     public int getIdOwnType() {
         return idOwnType;
     }
 
-    /**
-     * @param idOwnType the idOwnType to set
-     */
     public void setIdOwnType(int idOwnType) {
         this.idOwnType = idOwnType;
     }
 
-    /**
-     * @return the idLegalForm
-     */
     public int getIdLegalForm() {
         return idLegalForm;
     }
 
-    /**
-     * @param idLegalForm the idLegalForm to set
-     */
     public void setIdLegalForm(int idLegalForm) {
         this.idLegalForm = idLegalForm;
     }
 
-    /**
-     * @return the orgName
-     */
     public String getOrgName() {
         return orgName;
     }
 
-    /**
-     * @param orgName the orgName to set
-     */
     public void setOrgName(String orgName) {
         this.orgName = orgName;
     }
 
-    /**
-     * @return the fioHead
-     */
     public String getFioHead() {
         return fioHead;
     }
 
-    /**
-     * @param fioHead the fioHead to set
-     */
     public void setFioHead(String fioHead) {
         this.fioHead = fioHead;
     }
 
-    /**
-     * @return the fax
-     */
     public String getFax() {
         return fax;
     }
 
-    /**
-     * @param fax the fax to set
-     */
     public void setFax(String fax) {
         this.fax = fax;
     }
 
-    /**
-     * @return the phone
-     */
     public String getPhone() {
         return phone;
     }
 
-    /**
-     * @param phone the phone to set
-     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    /**
-     * @return the webPage
-     */
     public String getWebPage() {
         return webPage;
     }
 
-    /**
-     * @param webPage the webPage to set
-     */
     public void setWebPage(String webPage) {
         this.webPage = webPage;
     }
 
-    /**
-     * @return the licenseNumber
-     */
     public String getLicenseNumber() {
         return licenseNumber;
     }
 
-    /**
-     * @param licenseNumber the licenseNumber to set
-     */
     public void setLicenseNumber(String licenseNumber) {
         this.licenseNumber = licenseNumber;
     }
 
-    /**
-     * @return the licenseDate
-     */
     public Date getLicenseDate() {
         return licenseDate;
     }
 
-    /**
-     * @param licenseDate the licenseDate to set
-     */
     public void setLicenseDate(Date licenseDate) {
         this.licenseDate = licenseDate;
     }
 
-    /**
-     * @return the certificateNumber
-     */
     public String getCertificateNumber() {
         return certificateNumber;
     }
 
-    /**
-     * @param certificateNumber the certificateNumber to set
-     */
     public void setCertificateNumber(String certificateNumber) {
         this.certificateNumber = certificateNumber;
     }
 
-    /**
-     * @return the certificateDate
-     */
     public Date getCertificateDate() {
         return certificateDate;
     }
 
-    /**
-     * @param certificateDate the certificateDate to set
-     */
     public void setCertificateDate(Date certificateDate) {
         this.certificateDate = certificateDate;
     }
 
-    /**
-     * @return the address
-     */
     public String getAddress() {
         return address;
     }
 
-    /**
-     * @param address the address to set
-     */
     public void setAddress(String address) {
         this.address = address;
     }
 
-    /**
-     * @return the idFiles
-     */
     public int getIdFiles() {
         return idFiles;
     }
 
-    /**
-     * @param idFiles the idFiles to set
-     */
     public void setIdFiles(int idFiles) {
         this.idFiles = idFiles;
     }
 
-    /**
-     * @return the idEmployesList
-     */
     public int getIdEmployesList() {
         return idEmployesList;
     }
 
-    /**
-     * @param idEmployesList the idEmployesList to set
-     */
     public void setIdEmployesList(int idEmployesList) {
         this.idEmployesList = idEmployesList;
     }

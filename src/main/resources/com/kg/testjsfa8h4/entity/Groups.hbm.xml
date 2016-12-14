@@ -1,18 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Dec 12, 2016 1:39:17 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 14, 2016 1:26:35 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.kg.testjsfa8h4.entity.Groups" table="groups" catalog="testjsfa8h4" optimistic-lock="version">
-        <id name="id" type="java.lang.Integer">
-            <column name="ID" />
+        <id name="idAccess" type="java.lang.Integer">
+            <column name="ID_ACCESS" />
             <generator class="identity" />
         </id>
         <property name="privelege" type="string">
-            <column name="PRIVELEGE" length="10" not-null="true" />
+            <column name="PRIVELEGE" length="100" not-null="true" />
         </property>
         <property name="description" type="string">
-            <column name="DESCRIPTION" length="10" not-null="true" />
+            <column name="DESCRIPTION" length="200" not-null="true" />
         </property>
+        <set name="userses" table="users" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_ACCESS" not-null="true" />
+            </key>
+            <one-to-many class="com.kg.testjsfa8h4.entity.Users" />
+        </set>
     </class>
 </hibernate-mapping>

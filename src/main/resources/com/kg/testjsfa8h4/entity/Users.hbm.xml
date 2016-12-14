@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Dec 12, 2016 1:39:17 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 14, 2016 1:26:35 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.kg.testjsfa8h4.entity.Users" table="users" catalog="testjsfa8h4" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="ID" />
             <generator class="identity" />
         </id>
+        <many-to-one name="groups" class="com.kg.testjsfa8h4.entity.Groups" fetch="select">
+            <column name="ID_ACCESS" not-null="true" />
+        </many-to-one>
         <property name="login" type="string">
-            <column name="LOGIN" length="10" not-null="true" />
+            <column name="LOGIN" length="50" not-null="true" />
         </property>
         <property name="password" type="string">
-            <column name="PASSWORD" length="10" not-null="true" />
-        </property>
-        <property name="idAccess" type="string">
-            <column name="ID_ACCESS" length="10" not-null="true" />
+            <column name="PASSWORD" length="50" not-null="true" />
         </property>
         <property name="fio" type="string">
-            <column name="FIO" length="20" not-null="true" />
+            <column name="FIO" length="200" not-null="true" />
         </property>
         <property name="phoneNumber" type="string">
-            <column name="PHONE_NUMBER" length="20" />
+            <column name="PHONE_NUMBER" length="50" />
         </property>
         <property name="email" type="string">
-            <column name="EMAIL" length="20" />
+            <column name="EMAIL" length="50" />
         </property>
         <property name="createDate" type="timestamp">
             <column name="CREATE_DATE" length="19" not-null="true" />

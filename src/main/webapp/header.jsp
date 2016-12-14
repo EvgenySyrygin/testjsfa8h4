@@ -54,7 +54,6 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li><a href="main.jsp">Главная</a></li>
                         <li><a href="form1.jsp">Форма 1</a></li>
                         <li><a href="employees.jsp">Сотрудники</a></li>
                     </ul>

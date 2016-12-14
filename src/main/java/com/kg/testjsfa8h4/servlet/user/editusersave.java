@@ -1,5 +1,6 @@
 package com.kg.testjsfa8h4.servlet.user;
 
+import com.kg.testjsfa8h4.beans.GroupsBean;
 import com.kg.testjsfa8h4.beans.UsersBean;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -30,14 +31,16 @@ public class editusersave extends HttpServlet {
             String fio = request.getParameter("fio");
             String phone = request.getParameter("phone");
             String email = request.getParameter("email");
-            String group = request.getParameter("group");
+            Integer group = Integer.valueOf(request.getParameter("group"));
+            
+            GroupsBean groupsBean = new GroupsBean();
             
             UsersBean usersBean = new UsersBean();
             usersBean.setId(id);
             usersBean.setCreateDate(new Date());
             usersBean.setEmail(email);
             usersBean.setFio(fio);
-            usersBean.setIdAccess(group); 
+            usersBean.setGroups(groupsBean.returnGroupById(group)); 
             usersBean.setLogin(login);
             usersBean.setPhoneNumber(phone);
             usersBean.setPassword(password);

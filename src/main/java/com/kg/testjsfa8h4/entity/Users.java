@@ -1,13 +1,16 @@
 package com.kg.testjsfa8h4.entity;
-// Generated Dec 12, 2016 1:39:17 PM by Hibernate Tools 4.3.1
+// Generated Dec 14, 2016 1:26:34 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -23,9 +26,9 @@ public class Users  implements java.io.Serializable {
 
 
      private Integer id;
+     private Groups groups;
      private String login;
      private String password;
-     private String idAccess;
      private String fio;
      private String phoneNumber;
      private String email;
@@ -36,17 +39,17 @@ public class Users  implements java.io.Serializable {
     }
 
 	
-    public Users(String login, String password, String idAccess, String fio, Date createDate) {
+    public Users(Groups groups, String login, String password, String fio, Date createDate) {
+        this.groups = groups;
         this.login = login;
         this.password = password;
-        this.idAccess = idAccess;
         this.fio = fio;
         this.createDate = createDate;
     }
-    public Users(String login, String password, String idAccess, String fio, String phoneNumber, String email, Date createDate, Date loginDate) {
+    public Users(Groups groups, String login, String password, String fio, String phoneNumber, String email, Date createDate, Date loginDate) {
+       this.groups = groups;
        this.login = login;
        this.password = password;
-       this.idAccess = idAccess;
        this.fio = fio;
        this.phoneNumber = phoneNumber;
        this.email = email;
@@ -66,8 +69,18 @@ public class Users  implements java.io.Serializable {
         this.id = id;
     }
 
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_ACCESS", nullable=false)
+    public Groups getGroups() {
+        return this.groups;
+    }
     
-    @Column(name="LOGIN", nullable=false, length=10)
+    public void setGroups(Groups groups) {
+        this.groups = groups;
+    }
+
+    
+    @Column(name="LOGIN", nullable=false, length=50)
     public String getLogin() {
         return this.login;
     }
@@ -77,7 +90,7 @@ public class Users  implements java.io.Serializable {
     }
 
     
-    @Column(name="PASSWORD", nullable=false, length=10)
+    @Column(name="PASSWORD", nullable=false, length=50)
     public String getPassword() {
         return this.password;
     }
@@ -87,17 +100,7 @@ public class Users  implements java.io.Serializable {
     }
 
     
-    @Column(name="ID_ACCESS", nullable=false, length=10)
-    public String getIdAccess() {
-        return this.idAccess;
-    }
-    
-    public void setIdAccess(String idAccess) {
-        this.idAccess = idAccess;
-    }
-
-    
-    @Column(name="FIO", nullable=false, length=20)
+    @Column(name="FIO", nullable=false, length=200)
     public String getFio() {
         return this.fio;
     }
@@ -107,7 +110,7 @@ public class Users  implements java.io.Serializable {
     }
 
     
-    @Column(name="PHONE_NUMBER", length=20)
+    @Column(name="PHONE_NUMBER", length=50)
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
@@ -117,7 +120,7 @@ public class Users  implements java.io.Serializable {
     }
 
     
-    @Column(name="EMAIL", length=20)
+    @Column(name="EMAIL", length=50)
     public String getEmail() {
         return this.email;
     }

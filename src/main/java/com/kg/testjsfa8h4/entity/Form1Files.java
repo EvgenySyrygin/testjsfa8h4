@@ -1,5 +1,5 @@
 package com.kg.testjsfa8h4.entity;
-// Generated Dec 12, 2016 1:39:17 PM by Hibernate Tools 4.3.1
+// Generated Dec 14, 2016 1:26:34 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -58,7 +58,7 @@ public class Form1Files  implements java.io.Serializable {
     }
 
     
-    @Column(name="FILE_NAME", nullable=false, length=20)
+    @Column(name="FILE_NAME", nullable=false, length=50)
     public String getFileName() {
         return this.fileName;
     }
@@ -68,7 +68,7 @@ public class Form1Files  implements java.io.Serializable {
     }
 
     
-    @Column(name="FILE_DATE", nullable=false, length=20)
+    @Column(name="FILE_DATE", nullable=false, length=50)
     public String getFileDate() {
         return this.fileDate;
     }
@@ -78,7 +78,7 @@ public class Form1Files  implements java.io.Serializable {
     }
 
     
-    @Column(name="FILE_DATA", nullable=false, length=20)
+    @Column(name="FILE_DATA", nullable=false, length=50)
     public String getFileData() {
         return this.fileData;
     }
