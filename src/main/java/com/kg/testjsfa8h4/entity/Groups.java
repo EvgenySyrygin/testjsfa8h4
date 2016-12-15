@@ -1,5 +1,5 @@
 package com.kg.testjsfa8h4.entity;
-// Generated Dec 14, 2016 1:26:34 PM by Hibernate Tools 4.3.1
+// Generated Dec 15, 2016 10:08:14 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

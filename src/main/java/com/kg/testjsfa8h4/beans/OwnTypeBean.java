@@ -29,12 +29,16 @@ public class OwnTypeBean {
     public void returnOwnTypeById() {
         OwnTypeDao ownTypeDao = new OwnTypeDao();
         OwnType owType = ownTypeDao.getOwnTypeById(getId());
-        System.out.println("ready");
         if(owType != null) {
             setOwnType(owType.getOwnType());
-            System.out.println("ok");
         } else {
         }
+    }
+    
+    public OwnType returnOwnTypeById(int id) {
+        OwnTypeDao ownTypeDao = new OwnTypeDao();
+        OwnType owType = ownTypeDao.getOwnTypeById(id);
+        return owType;
     }
     
     public void deleteOwnType() {

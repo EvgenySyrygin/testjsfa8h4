@@ -1,12 +1,16 @@
 package com.kg.testjsfa8h4.entity;
-// Generated Dec 14, 2016 1:26:34 PM by Hibernate Tools 4.3.1
+// Generated Dec 15, 2016 10:08:14 AM by Hibernate Tools 4.3.1
 
 
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -21,12 +25,18 @@ public class LegalForm  implements java.io.Serializable {
 
      private Integer id;
      private String legalForm;
+     private Set form1s = new HashSet(0);
 
     public LegalForm() {
     }
 
+	
     public LegalForm(String legalForm) {
+        this.legalForm = legalForm;
+    }
+    public LegalForm(String legalForm, Set form1s) {
        this.legalForm = legalForm;
+       this.form1s = form1s;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)
@@ -49,6 +59,15 @@ public class LegalForm  implements java.io.Serializable {
     
     public void setLegalForm(String legalForm) {
         this.legalForm = legalForm;
+    }
+
+@OneToMany(fetch=FetchType.LAZY, mappedBy="legalForm")
+    public Set getForm1s() {
+        return this.form1s;
+    }
+    
+    public void setForm1s(Set form1s) {
+        this.form1s = form1s;
     }
 
 

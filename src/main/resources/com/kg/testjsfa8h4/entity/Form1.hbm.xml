@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Dec 14, 2016 1:26:35 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 15, 2016 10:08:14 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.kg.testjsfa8h4.entity.Form1" table="form1" catalog="testjsfa8h4" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
             <column name="ID" />
             <generator class="identity" />
         </id>
-        <property name="idOwnType" type="int">
-            <column name="ID_OWN_TYPE" not-null="true" />
-        </property>
-        <property name="idLegalForm" type="int">
+        <many-to-one name="legalForm" class="com.kg.testjsfa8h4.entity.LegalForm" fetch="select">
             <column name="ID_LEGAL_FORM" not-null="true" />
-        </property>
+        </many-to-one>
+        <many-to-one name="ownType" class="com.kg.testjsfa8h4.entity.OwnType" fetch="select">
+            <column name="ID_OWN_TYPE" not-null="true" />
+        </many-to-one>
         <property name="orgName" type="string">
             <column name="ORG_NAME" length="100" not-null="true" />
         </property>
@@ -50,5 +50,17 @@
         <property name="idEmployesList" type="int">
             <column name="ID_EMPLOYES_LIST" not-null="true" />
         </property>
+        <set name="employesLists" table="employes_list" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_FORM1" not-null="true" />
+            </key>
+            <one-to-many class="com.kg.testjsfa8h4.entity.EmployesList" />
+        </set>
+        <set name="form1Fileses" table="form1_files" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_FORM1" not-null="true" />
+            </key>
+            <one-to-many class="com.kg.testjsfa8h4.entity.Form1Files" />
+        </set>
     </class>
 </hibernate-mapping>

@@ -30,7 +30,7 @@
         <label for="email">Группа</label>
         <select class="form-control" id="group" name="group" placeholder="Выберите группу">
             <% for (Groups g : showGroupsBean.returnAllGroups()) { %>
-            <option value="<%out.print(g.getId());%>"><%out.print(g.getPrivelege());%></option>
+            <option value="<%out.print(g.getIdAccess());%>"><%out.print(g.getPrivelege());%></option>
             <% }%>
         </select>
     </div>

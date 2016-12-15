@@ -1,12 +1,15 @@
 package com.kg.testjsfa8h4.entity;
-// Generated Dec 14, 2016 1:26:34 PM by Hibernate Tools 4.3.1
+// Generated Dec 15, 2016 10:08:14 AM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -20,7 +23,7 @@ public class EmployesList  implements java.io.Serializable {
 
 
      private Integer id;
-     private String idForm1;
+     private Form1 form1;
      private String fio;
      private String phoneHome;
      private String phoneMobile;
@@ -33,8 +36,8 @@ public class EmployesList  implements java.io.Serializable {
     public EmployesList() {
     }
 
-    public EmployesList(String idForm1, String fio, String phoneHome, String phoneMobile, String phoneWork, String homeAddress, String mail, String bankDetails, String position) {
-       this.idForm1 = idForm1;
+    public EmployesList(Form1 form1, String fio, String phoneHome, String phoneMobile, String phoneWork, String homeAddress, String mail, String bankDetails, String position) {
+       this.form1 = form1;
        this.fio = fio;
        this.phoneHome = phoneHome;
        this.phoneMobile = phoneMobile;
@@ -57,14 +60,14 @@ public class EmployesList  implements java.io.Serializable {
         this.id = id;
     }
 
-    
-    @Column(name="ID_FORM1", nullable=false, length=10)
-    public String getIdForm1() {
-        return this.idForm1;
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_FORM1", nullable=false)
+    public Form1 getForm1() {
+        return this.form1;
     }
     
-    public void setIdForm1(String idForm1) {
-        this.idForm1 = idForm1;
+    public void setForm1(Form1 form1) {
+        this.form1 = form1;
     }
 
     

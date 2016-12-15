@@ -1,6 +1,7 @@
 package com.kg.testjsfa8h4.servlet.employe;
 
 import com.kg.testjsfa8h4.beans.EmployesBean;
+import com.kg.testjsfa8h4.beans.Form1Bean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -24,7 +25,7 @@ public class editemployesave extends HttpServlet {
         try {
             Integer id = Integer.valueOf(request.getParameter("id"));
             
-            String fid = request.getParameter("fid");
+            Integer fid = Integer.valueOf(request.getParameter("fid"));
             String fio = request.getParameter("fio");
             String hphone = request.getParameter("hphone");
             String mphone = request.getParameter("mphone");
@@ -34,12 +35,14 @@ public class editemployesave extends HttpServlet {
             String bankr = request.getParameter("bankr");
             String position = request.getParameter("position");
             
+            Form1Bean f1Bean = new Form1Bean();
+            
             EmployesBean employesBean = new EmployesBean();
             employesBean.setId(id);
             employesBean.setBankDetails(bankr);
             employesBean.setFio(fio);
             employesBean.setHomeAddress(haddress);
-            employesBean.setIdForm1(fid);
+            employesBean.setForm1(f1Bean.returnForm1ById(fid));
             employesBean.setMail(email);
             employesBean.setPhoneHome(hphone);
             employesBean.setPhoneMobile(mphone);

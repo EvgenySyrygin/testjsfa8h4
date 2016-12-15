@@ -35,6 +35,12 @@ public class LegalFormBean {
         }
     }
     
+    public LegalForm returnLegalFormById(int id) {
+        LegalFormDao legalFormDao = new LegalFormDao();
+        LegalForm legalFrom = legalFormDao.getLegalFormById(id);
+        return legalFrom;
+    }
+    
     public void deleteLegalForm() {
         LegalFormDao legalFormDao = new LegalFormDao();
         legalFormDao.deleteLegalForm(getId());

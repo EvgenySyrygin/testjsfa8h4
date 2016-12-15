@@ -58,8 +58,8 @@ public class Form1Dao {
             oldForm1.setFioHead(form1.getFioHead());
             oldForm1.setIdEmployesList(form1.getIdEmployesList());
             oldForm1.setIdFiles(form1.getIdFiles());
-            oldForm1.setIdLegalForm(form1.getIdLegalForm());
-            oldForm1.setIdOwnType(form1.getIdOwnType());
+            oldForm1.setLegalForm(form1.getLegalForm());
+            oldForm1.setOwnType(form1.getOwnType());
             oldForm1.setLicenseDate(form1.getLicenseDate());
             oldForm1.setLicenseNumber(form1.getLicenseNumber());
             oldForm1.setOrgName(form1.getOrgName());

@@ -2,7 +2,9 @@ package com.kg.testjsfa8h4.beans;
 
 import com.kg.testjsfa8h4.dao.GroupsDao;
 import com.kg.testjsfa8h4.entity.Groups;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -17,6 +19,7 @@ public class GroupsBean {
     private Integer id;
     private String privelege;
     private String description;
+    private Set userses = new HashSet(0);
      
     public GroupsBean() {
     }
@@ -40,11 +43,6 @@ public class GroupsBean {
     public Groups returnGroupById(int id) {
         GroupsDao grupsDao = new GroupsDao();
         Groups group = grupsDao.getGroupById(id);
-        if(group != null) {
-            setDescription(group.getDescription());
-            setPrivelege(group.getPrivelege());
-        } else {
-        }
         return group;
     }
     
@@ -91,5 +89,14 @@ public class GroupsBean {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Set getUserses() {
+        return userses;
+    }
+
+    public void setUserses(Set userses) {
+        this.userses = userses;
+    }    
     //</editor-fold>
+
 }

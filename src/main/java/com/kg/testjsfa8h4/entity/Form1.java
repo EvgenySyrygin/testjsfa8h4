@@ -1,13 +1,19 @@
 package com.kg.testjsfa8h4.entity;
-// Generated Dec 14, 2016 1:26:34 PM by Hibernate Tools 4.3.1
+// Generated Dec 15, 2016 10:08:14 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -23,8 +29,8 @@ public class Form1  implements java.io.Serializable {
 
 
      private Integer id;
-     private int idOwnType;
-     private int idLegalForm;
+     private LegalForm legalForm;
+     private OwnType ownType;
      private String orgName;
      private String fioHead;
      private String fax;
@@ -37,13 +43,32 @@ public class Form1  implements java.io.Serializable {
      private String address;
      private int idFiles;
      private int idEmployesList;
+     private Set employesLists = new HashSet(0);
+     private Set form1Fileses = new HashSet(0);
 
     public Form1() {
     }
 
-    public Form1(int idOwnType, int idLegalForm, String orgName, String fioHead, String fax, String phone, String webPage, String licenseNumber, Date licenseDate, String certificateNumber, Date certificateDate, String address, int idFiles, int idEmployesList) {
-       this.idOwnType = idOwnType;
-       this.idLegalForm = idLegalForm;
+	
+    public Form1(LegalForm legalForm, OwnType ownType, String orgName, String fioHead, String fax, String phone, String webPage, String licenseNumber, Date licenseDate, String certificateNumber, Date certificateDate, String address, int idFiles, int idEmployesList) {
+        this.legalForm = legalForm;
+        this.ownType = ownType;
+        this.orgName = orgName;
+        this.fioHead = fioHead;
+        this.fax = fax;
+        this.phone = phone;
+        this.webPage = webPage;
+        this.licenseNumber = licenseNumber;
+        this.licenseDate = licenseDate;
+        this.certificateNumber = certificateNumber;
+        this.certificateDate = certificateDate;
+        this.address = address;
+        this.idFiles = idFiles;
+        this.idEmployesList = idEmployesList;
+    }
+    public Form1(LegalForm legalForm, OwnType ownType, String orgName, String fioHead, String fax, String phone, String webPage, String licenseNumber, Date licenseDate, String certificateNumber, Date certificateDate, String address, int idFiles, int idEmployesList, Set employesLists, Set form1Fileses) {
+       this.legalForm = legalForm;
+       this.ownType = ownType;
        this.orgName = orgName;
        this.fioHead = fioHead;
        this.fax = fax;
@@ -56,6 +81,8 @@ public class Form1  implements java.io.Serializable {
        this.address = address;
        this.idFiles = idFiles;
        this.idEmployesList = idEmployesList;
+       this.employesLists = employesLists;
+       this.form1Fileses = form1Fileses;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)
@@ -70,24 +97,24 @@ public class Form1  implements java.io.Serializable {
         this.id = id;
     }
 
-    
-    @Column(name="ID_OWN_TYPE", nullable=false)
-    public int getIdOwnType() {
-        return this.idOwnType;
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_LEGAL_FORM", nullable=false)
+    public LegalForm getLegalForm() {
+        return this.legalForm;
     }
     
-    public void setIdOwnType(int idOwnType) {
-        this.idOwnType = idOwnType;
+    public void setLegalForm(LegalForm legalForm) {
+        this.legalForm = legalForm;
     }
 
-    
-    @Column(name="ID_LEGAL_FORM", nullable=false)
-    public int getIdLegalForm() {
-        return this.idLegalForm;
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="ID_OWN_TYPE", nullable=false)
+    public OwnType getOwnType() {
+        return this.ownType;
     }
     
-    public void setIdLegalForm(int idLegalForm) {
-        this.idLegalForm = idLegalForm;
+    public void setOwnType(OwnType ownType) {
+        this.ownType = ownType;
     }
 
     
@@ -208,6 +235,24 @@ public class Form1  implements java.io.Serializable {
     
     public void setIdEmployesList(int idEmployesList) {
         this.idEmployesList = idEmployesList;
+    }
+
+@OneToMany(fetch=FetchType.LAZY, mappedBy="form1")
+    public Set getEmployesLists() {
+        return this.employesLists;
+    }
+    
+    public void setEmployesLists(Set employesLists) {
+        this.employesLists = employesLists;
+    }
+
+@OneToMany(fetch=FetchType.LAZY, mappedBy="form1")
+    public Set getForm1Fileses() {
+        return this.form1Fileses;
+    }
+    
+    public void setForm1Fileses(Set form1Fileses) {
+        this.form1Fileses = form1Fileses;
     }
 
 

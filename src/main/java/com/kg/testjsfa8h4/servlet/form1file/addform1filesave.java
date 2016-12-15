@@ -1,7 +1,5 @@
-package com.kg.testjsfa8h4.servlet.employe;
+package com.kg.testjsfa8h4.servlet.form1file;
 
-import com.kg.testjsfa8h4.beans.EmployesBean;
-import com.kg.testjsfa8h4.beans.Form1Bean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,8 +12,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author esyrygin
  */
-@WebServlet(name = "addemployesave", urlPatterns = {"/addemployesave"})
-public class addemployesave extends HttpServlet {
+@WebServlet(name = "addform1filesave", urlPatterns = {"/addform1filesave"})
+public class addform1filesave extends HttpServlet {
+    
+    private static final int MAX_MEMORY_SIZE = 1024 * 1024 * 2;
+    private static final int MAX_REQUEST_SIZE = 1024 * 1024;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -23,32 +24,8 @@ public class addemployesave extends HttpServlet {
         request.setCharacterEncoding("UTF-8"); 
         PrintWriter out = response.getWriter();
         try {
-            Integer fid = Integer.valueOf(request.getParameter("fid"));
-            String fio = request.getParameter("fio");
-            String hphone = request.getParameter("hphone");
-            String mphone = request.getParameter("mphone");
-            String wphone = request.getParameter("wphone");
-            String haddress = request.getParameter("haddress");
-            String email = request.getParameter("email");
-            String bankr = request.getParameter("bankr");
-            String position = request.getParameter("position");
             
-            Form1Bean f1Bean = new Form1Bean();
-            
-            EmployesBean employesBean = new EmployesBean();
-            employesBean.setBankDetails(bankr);
-            employesBean.setFio(fio);
-            employesBean.setHomeAddress(haddress);
-            employesBean.setForm1(f1Bean.returnForm1ById(fid));
-            employesBean.setMail(email);
-            employesBean.setPhoneHome(hphone);
-            employesBean.setPhoneMobile(mphone);
-            employesBean.setPhoneWork(wphone);
-            employesBean.setPosition(position);
-            
-            employesBean.addEmploye();
-            
-            response.sendRedirect("employees.jsp");
+            response.sendRedirect("form1files.jsp");
         } finally {
             out.close();
         }

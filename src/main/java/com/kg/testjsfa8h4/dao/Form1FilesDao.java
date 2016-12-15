@@ -1,9 +1,12 @@
 package com.kg.testjsfa8h4.dao;
 
-import com.kg.testjsfa8h4.entity.EmployesList;
+import com.kg.testjsfa8h4.entity.Form1Files;
+import com.kg.testjsfa8h4.entity.Users;
 import com.kg.testjsfa8h4.persistence.HibernateUtil;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -12,13 +15,13 @@ import org.hibernate.Transaction;
  *
  * @author DEX
  */
-public class EmployesDao {
-    public void addEmployes(EmployesList empl) {
+public class Form1FilesDao {
+    public void addForm1Files(Form1Files form1Files) {
         Transaction tx = null;
         Session session = new HibernateUtil().getSessionFactory().openSession();
         try {
             tx = session.beginTransaction();
-            session.save(empl);
+            session.save(form1Files);
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -30,13 +33,13 @@ public class EmployesDao {
             session.close();
         }
     }
-    public void deleteEmployes(int idEmployes) {
+    public void deleteForm1Files(int idForm1Files) {
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            EmployesList empl = (EmployesList) session.load(EmployesList.class, new Integer(idEmployes));
-            session.delete(empl);
+            Form1Files form1Files = (Form1Files) session.load(Form1Files.class, new Integer(idForm1Files));
+            session.delete(form1Files);
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -45,22 +48,18 @@ public class EmployesDao {
             session.close();
         }
     }
-    public void updateEmployes (int idEmploye, EmployesList empl) {
+    public void updateForm1Files (int idForm1Files, Form1Files form1Files) {
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            EmployesList oldEmpl = (EmployesList) session.load(EmployesList.class, new Integer(idEmploye));
-            oldEmpl.setBankDetails(empl.getBankDetails());
-            oldEmpl.setFio(empl.getFio());
-            oldEmpl.setHomeAddress(empl.getHomeAddress());
-            oldEmpl.setForm1(empl.getForm1());
-            oldEmpl.setMail(empl.getMail());
-            oldEmpl.setPhoneHome(empl.getPhoneHome());
-            oldEmpl.setPhoneMobile(empl.getPhoneMobile());
-            oldEmpl.setPhoneWork(empl.getPhoneWork());
-            oldEmpl.setPosition(empl.getPosition());
-            session.update(oldEmpl);
+            Form1Files oldForm1Files = (Form1Files) session.load(Form1Files.class, new Integer(idForm1Files));
+            oldForm1Files.setFileData(form1Files.getFileData());
+            oldForm1Files.setFileDate(form1Files.getFileDate());
+            oldForm1Files.setFileName(form1Files.getFileName());
+            oldForm1Files.setForm1(form1Files.getForm1());
+            
+            session.update(oldForm1Files);
             trns.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,40 +71,50 @@ public class EmployesDao {
             session.close();
         }
     }
-    public EmployesList getEmployesById (int idEmpl) {
-        EmployesList empl = null;
+    public Form1Files getForm1FilesById (int idUser) {
+        Form1Files f1Files = null;
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            String queryString = "from EmployesList where id = :idToFind";
+            String queryString = "from Form1Files where id = :idToFind";
             Query query = session.createQuery(queryString);
-            query.setInteger("idToFind", idEmpl);
-            empl = (EmployesList) query.uniqueResult();
+            query.setInteger("idToFind", idUser);
+            f1Files = (Form1Files) query.uniqueResult();
+            Hibernate.initialize(f1Files.getForm1());
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             session.flush();
             session.close();
         }
-        return empl;
+        return f1Files;
     }
     
-    public List<EmployesList> getAllEmployes() {
-        List<EmployesList> listEmployesList = new ArrayList<EmployesList>();
+    public List<Form1Files> getAllForm1File() {
+        List<Form1Files> listF1Files = new ArrayList<Form1Files>();
+        List<Form1Files> listF1FilesRet = new ArrayList<Form1Files>();
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         
         try {
+            
             trns = session.beginTransaction();
-            listEmployesList = session.createCriteria(EmployesList.class).list();
+            listF1Files = session.createCriteria(Users.class).list();
+            
+            Iterator u = listF1Files.iterator();
+            while(u.hasNext()) {
+                Form1Files t = (Form1Files) u.next();
+                Hibernate.initialize(t.getForm1());
+                listF1FilesRet.add(t);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             session.flush();
             session.close();
         }
-        return listEmployesList;
+        return listF1FilesRet;
     }
     
 }

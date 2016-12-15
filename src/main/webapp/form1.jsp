@@ -30,8 +30,8 @@
             <% for (Form1 f1 : showForm1.returnAllForm1()) { %>
             <tr>
                 <td><%out.print(f1.getId());%></td>
-                <td><%out.print(f1.getIdOwnType());%></td>
-                <td><%out.print(f1.getIdLegalForm());%></td>
+                <td><%out.print(f1.getOwnType());%></td>
+                <td><%out.print(f1.getLegalForm());%></td>
                 <td><%out.print(f1.getOrgName());%></td>
                 <td><%out.print(f1.getFioHead());%></td>
                 <td><%out.print(f1.getFax());%></td>

@@ -56,6 +56,7 @@
                     <ul class="nav nav-sidebar">
                         <li><a href="form1.jsp">Форма 1</a></li>
                         <li><a href="employees.jsp">Сотрудники</a></li>
+                        <li><a href="form1files.jsp">Файлы формы 1</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li><a href="own_type.jsp">Форма собственности</a></li>

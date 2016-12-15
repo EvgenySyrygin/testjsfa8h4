@@ -1,6 +1,8 @@
 package com.kg.testjsfa8h4.servlet.form1;
 
 import com.kg.testjsfa8h4.beans.Form1Bean;
+import com.kg.testjsfa8h4.beans.LegalFormBean;
+import com.kg.testjsfa8h4.beans.OwnTypeBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -54,10 +56,13 @@ public class editform1save extends HttpServlet {
                 Logger.getLogger(addform1save.class.getName()).log(Level.SEVERE, null, ex);
             }
             
+            LegalFormBean lfBean = new LegalFormBean();
+            OwnTypeBean otBean = new OwnTypeBean();
+            
             Form1Bean form1Bean = new Form1Bean();
             form1Bean.setId(id);
-            form1Bean.setIdOwnType(owntype);
-            form1Bean.setIdLegalForm(legalform);
+            form1Bean.setOwnType(otBean.returnOwnTypeById(owntype));
+            form1Bean.setLegalForm(lfBean.returnLegalFormById(legalform));
             form1Bean.setOrgName(orgname);
             form1Bean.setFioHead(fiohead);
             form1Bean.setFax(fax);
