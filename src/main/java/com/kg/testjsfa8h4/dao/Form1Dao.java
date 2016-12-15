@@ -1,9 +1,12 @@
 package com.kg.testjsfa8h4.dao;
 
 import com.kg.testjsfa8h4.entity.Form1;
+import com.kg.testjsfa8h4.entity.Users;
 import com.kg.testjsfa8h4.persistence.HibernateUtil;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -98,12 +101,22 @@ public class Form1Dao {
     
     public List<Form1> getAllForm1() {
         List<Form1> listForm1 = new ArrayList<Form1>();
+        List<Form1> listForm1Ret = new ArrayList<Form1>();
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         
         try {
             trns = session.beginTransaction();
             listForm1 = session.createCriteria(Form1.class).list();
+            
+            Iterator u = listForm1.iterator();
+            while(u.hasNext()) {
+                Form1 t = (Form1) u.next();
+                Hibernate.initialize(t.getLegalForm());
+                Hibernate.initialize(t.getOwnType());
+                listForm1Ret.add(t);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

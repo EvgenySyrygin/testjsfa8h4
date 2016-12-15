@@ -1,7 +1,7 @@
 <%@page import="com.kg.testjsfa8h4.entity.Form1Files"%>
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file='header.jsp'%>
-<jsp:useBean id="f1fBean" class="com.kg.testjsfa8h4.beans.FormFilesBean" scope="application" />
+<jsp:useBean id="f1fBean" class="com.kg.testjsfa8h4.beans.Form1FilesBean" scope="application" />
 
 <h2 class="sub-header">Файлы формы 1</h2>
 <div class="table-responsive">

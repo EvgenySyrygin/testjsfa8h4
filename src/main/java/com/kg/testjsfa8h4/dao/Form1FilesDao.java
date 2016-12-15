@@ -100,7 +100,7 @@ public class Form1FilesDao {
         try {
             
             trns = session.beginTransaction();
-            listF1Files = session.createCriteria(Users.class).list();
+            listF1Files = session.createCriteria(Form1Files.class).list();
             
             Iterator u = listF1Files.iterator();
             while(u.hasNext()) {

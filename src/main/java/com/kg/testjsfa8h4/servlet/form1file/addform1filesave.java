@@ -24,7 +24,10 @@ public class addform1filesave extends HttpServlet {
         request.setCharacterEncoding("UTF-8"); 
         PrintWriter out = response.getWriter();
         try {
-            
+            String form1 = request.getParameter("form1");
+            String file = request.getParameter("file");
+            System.out.println(form1);
+            System.out.println(file);
             response.sendRedirect("form1files.jsp");
         } finally {
             out.close();

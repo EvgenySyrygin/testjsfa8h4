@@ -4,7 +4,7 @@
 <jsp:useBean id="form1Bean" class="com.kg.testjsfa8h4.beans.Form1Bean" scope="application" />
 
 <h1>Добавление файла к фомер 1</h1>
-<form role="form" action="addusersave" method="post">
+<form role="form" action="addform1filesave" method="post">
     <div class="form-group">
         <label for="form1">Форма 1</label>
         <select class="form-control" id="form1" name="form1" placeholder="Выберите форму 1">

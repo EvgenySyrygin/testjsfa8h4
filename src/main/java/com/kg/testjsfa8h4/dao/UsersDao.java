@@ -103,11 +103,7 @@ public class UsersDao {
             
             trns = session.beginTransaction();
             listGroups = session.createCriteria(Users.class).list();
-            
-//            Iterator i = listGroups.iterator();
-//            Users t = (Users) i.next();
-//            Hibernate.initialize(t.getGroups());
-            
+
             Iterator u = listGroups.iterator();
             while(u.hasNext()) {
                 Users t = (Users) u.next();

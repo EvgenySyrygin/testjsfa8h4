@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Фирма</th>
+                <th>Форма 1</th>
                 <th>ФИО</th>
                 <th>Домашний телефон</th>                  
                 <th>Мобильный телефон</th>                  
@@ -24,7 +24,7 @@
             <% for (EmployesList e : showEmployes.returnAllEmployesList()) { %>
             <tr>
                 <td><%out.print(e.getId());%></td>
-                <td><%out.print(e.getIdForm1());%></td>
+                <td><%out.print(e.getForm1().getId());%> - <%out.print(e.getForm1().getFioHead());%></td>
                 <td><%out.print(e.getFio());%></td>
                 <td><%out.print(e.getPhoneHome());%></td>
                 <td><%out.print(e.getPhoneMobile());%></td>

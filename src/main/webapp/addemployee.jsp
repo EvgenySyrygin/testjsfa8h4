@@ -1,11 +1,17 @@
+<%@page import="com.kg.testjsfa8h4.entity.Form1"%>
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file='header.jsp'%>
+<jsp:useBean id="from1Bean" class="com.kg.testjsfa8h4.beans.Form1Bean" scope="application"/> 
 
 <h1>Добавление Сотрдуника</h1>
 <form role="form" action="addemployesave" method="post">
     <div class="form-group">
-        <label for="fid">Ид формы</label>
-        <input type="text" class="form-control" id="fid" name="fid" placeholder="Ид формы">
+        <label for="fid">Ид формы 1</label>
+        <select class="form-control" id="fid" name="fid" placeholder="Ид формы 1">
+            <% for (Form1 f : from1Bean.returnAllForm1()) { %>
+            <option value="<%out.print(f.getId());%>"><%out.print(f.getFioHead());%></option>
+            <% }%>
+        </select>
     </div>
     <div class="form-group">
         <label for="fio">ФИО</label>

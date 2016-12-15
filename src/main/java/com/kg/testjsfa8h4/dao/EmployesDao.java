@@ -1,9 +1,12 @@
 package com.kg.testjsfa8h4.dao;
 
 import com.kg.testjsfa8h4.entity.EmployesList;
+import com.kg.testjsfa8h4.entity.Users;
 import com.kg.testjsfa8h4.persistence.HibernateUtil;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -93,12 +96,21 @@ public class EmployesDao {
     
     public List<EmployesList> getAllEmployes() {
         List<EmployesList> listEmployesList = new ArrayList<EmployesList>();
+        List<EmployesList> listEmployesListRet = new ArrayList<EmployesList>();
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         
         try {
             trns = session.beginTransaction();
             listEmployesList = session.createCriteria(EmployesList.class).list();
+            
+            Iterator u = listEmployesList.iterator();
+            while(u.hasNext()) {
+                EmployesList t = (EmployesList) u.next();
+                Hibernate.initialize(t.getForm1());
+                listEmployesListRet.add(t);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
