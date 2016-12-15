@@ -77,14 +77,14 @@
         <label for="address">Адрес</label>
         <input type="text" class="form-control" id="address" name="address" placeholder="Введите Адрес">
     </div>
-    <div class="form-group">
+<!--    <div class="form-group">
         <label for="files">Файлы для прикрепления(при необходимости)</label>
         <input type="text" class="form-control" id="files" name="files" placeholder="Введите Файлы для прикрепления(при необходимости)">
     </div>
     <div class="form-group">
         <label for="employees">Список сотрудников</label>
         <input type="text" class="form-control" id="employees" name="employees" placeholder="Введите Список сотрудников">
-    </div>
+    </div>-->
 
     <button type="submit" class="btn btn-default">Сохранить</button>
 </form>

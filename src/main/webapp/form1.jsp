@@ -42,8 +42,8 @@
                 <td><%out.print(f1.getCertificateNumber());%></td>
                 <td><%out.print(f1.getCertificateDate());%></td>
                 <td><%out.print(f1.getAddress());%></td>
-                <td><%out.print(f1.getIdFiles());%></td>
-                <td><%out.print(f1.getIdEmployesList());%></td>
+                <td><a href="#"><%out.print(f1.getForm1Fileses().size());%></a></td>
+                <td><a href="#"><%out.print(f1.getEmployesLists().size());%></a></td>
                 <td><p data-placement="top" data-toggle="tooltip" title="" data-original-title="Edit">
                         <a href="editform1.jsp?id=<%out.print(f1.getId());%>" class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal">
                             <span class="glyphicon glyphicon-pencil"></span></a></p></td>

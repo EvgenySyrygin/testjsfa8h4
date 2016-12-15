@@ -1,6 +1,7 @@
 package com.kg.testjsfa8h4.dao;
 
 import com.kg.testjsfa8h4.entity.EmployesList;
+import com.kg.testjsfa8h4.entity.Form1;
 import com.kg.testjsfa8h4.entity.Users;
 import com.kg.testjsfa8h4.persistence.HibernateUtil;
 import java.util.ArrayList;
@@ -102,6 +103,37 @@ public class EmployesDao {
         
         try {
             trns = session.beginTransaction();
+            listEmployesList = session.createCriteria(EmployesList.class).list();
+            
+            Iterator u = listEmployesList.iterator();
+            while(u.hasNext()) {
+                EmployesList t = (EmployesList) u.next();
+                Hibernate.initialize(t.getForm1());
+                listEmployesListRet.add(t);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return listEmployesList;
+    }
+    
+    public List<EmployesList> getAllEmployesByFormId(int formId) {
+        List<EmployesList> listEmployesList = new ArrayList<EmployesList>();
+        List<EmployesList> listEmployesListRet = new ArrayList<EmployesList>();
+        Transaction trns = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        try {
+            trns = session.beginTransaction();
+            String queryString = "from EmployesList where from1 = :formToFind";
+            Query query = session.createQuery(queryString);
+            Form1Dao f1Dao = new Form1Dao();
+            Form1 form1ById = f1Dao.getForm1ById(formId);
+            query.setEntity(formId, form1ById);
             listEmployesList = session.createCriteria(EmployesList.class).list();
             
             Iterator u = listEmployesList.iterator();

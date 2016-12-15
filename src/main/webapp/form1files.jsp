@@ -9,9 +9,10 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Фома</th>
+                <th>Форма</th>
                 <th>Имя файла</th>
-                <th>Дата</th>                  
+                <th>Дата</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -22,12 +23,14 @@
                 <td><%out.print(ff.getFileName());%></td>
                 <td><%out.print(ff.getFileDate());%></td>
                 <td><p data-placement="top" data-toggle="tooltip" title="" data-original-title="Delete">
-                        <a href="deleteform1filessave?id=<%out.print(ff.getId());%>" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal">
+                        <a href="deleteform1filesave?id=<%out.print(ff.getId());%>" class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal">
                             <span class="glyphicon glyphicon-trash"></span></a></p></td>
             </tr>
             <% }%>
         </tbody>
     </table>
+    <h3>${message}</h3>
+    <% request.getSession().setAttribute("message",""); %>
 </div>
 
 <a href="addform1files.jsp" class="btn btn-primary">Добавить Файл</a>

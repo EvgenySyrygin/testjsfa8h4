@@ -114,6 +114,8 @@ public class Form1Dao {
                 Form1 t = (Form1) u.next();
                 Hibernate.initialize(t.getLegalForm());
                 Hibernate.initialize(t.getOwnType());
+                Hibernate.initialize(t.getEmployesLists());
+                Hibernate.initialize(t.getForm1Fileses());
                 listForm1Ret.add(t);
             }
 

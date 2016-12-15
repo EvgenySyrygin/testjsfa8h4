@@ -4,6 +4,12 @@
 <jsp:useBean id="showEmployes" class="com.kg.testjsfa8h4.beans.EmployesBean" scope="application" />
 
 <h2 class="sub-header">Сотрудники</h2>
+<% 
+Integer id = null;
+if( request.getParameter("id") != null ) {
+    id = Integer.valueOf(request.getParameter("id"));
+}
+%>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>

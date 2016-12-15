@@ -83,6 +83,11 @@ public class EmployesBean {
         return usersDao.getAllEmployes();
     }
     
+    public List<EmployesList> returnAllEmployesListByFormId(int id) {
+        EmployesDao usersDao = new EmployesDao();
+        return usersDao.getAllEmployesByFormId(id);
+    }
+    
     //<editor-fold defaultstate="collapsed" desc="get/set">
     public Integer getId() {
         return id;
