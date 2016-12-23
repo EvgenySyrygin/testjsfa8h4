@@ -41,8 +41,8 @@ public class addform1save extends HttpServlet {
             String certificatenumber = request.getParameter("certificatenumber");
             String certificatenumberdate = request.getParameter("certificatenumberdate");
             String address = request.getParameter("address");
-            Integer files = Integer.valueOf(request.getParameter("files"));
-            Integer employees = Integer.valueOf(request.getParameter("employees"));
+            Integer files = 1;
+            Integer employees = 1;
             
             SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
             Date dlicensenumberdate = new Date();

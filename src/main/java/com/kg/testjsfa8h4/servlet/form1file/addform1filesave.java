@@ -2,6 +2,7 @@ package com.kg.testjsfa8h4.servlet.form1file;
 
 import com.kg.testjsfa8h4.beans.Form1Bean;
 import com.kg.testjsfa8h4.beans.Form1FilesBean;
+import com.kg.testjsfa8h4.entity.Form1;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -73,6 +74,13 @@ public class addform1filesave extends HttpServlet {
                     f1fBean.setFileDate(fileDateN);
                     f1fBean.setFileName(fileNameN);
                     f1fBean.setForm1(f1Bean.returnForm1ById(form1));
+                    
+                    //update id to files and employes
+                    f1Bean.setId(form1);
+                    f1Bean.returnForm1ById();
+                    f1Bean.setIdEmployesList(f1Bean.getId());
+                    f1Bean.setIdFiles(f1Bean.getId());
+                    f1Bean.updateForm1();
 
                     f1fBean.addForm1Files();
                 }

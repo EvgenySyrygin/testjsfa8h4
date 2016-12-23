@@ -13,7 +13,7 @@
 <h1>Редактирование формы 1 <%= request.getParameter("id")%></h1>
 <% form1.setId(Integer.valueOf(request.getParameter("id")));
     form1.returnForm1ById(); %>
-<form role="form" action="addform1save" method="post" accept-charset="UTF-8">
+<form role="form" action="editform1save" method="post" accept-charset="UTF-8">
     <div class="form-group">
         <label for="owntype">Форма собственности</label>
         <select class="form-control" id="owntype" name="owntype" placeholder="Выберите Форма собственности">
